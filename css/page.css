@@ -79,13 +79,13 @@ main {
   margin-bottom: 50px;
 }
 
-.article {
-  margin-bottom: 36px;
+.articles-container > a {
+    text-decoration: none;
+    color: #000;
 }
 
-.articles-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+.article {
+  margin-bottom: 36px;
 }
 
 .img-container {
@@ -152,6 +152,9 @@ main {
     padding: 0 15px;
   }
 
+  .article {
+    margin-bottom: 20px;
+  }
   
 }
 
