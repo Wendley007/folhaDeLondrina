@@ -1,11 +1,12 @@
 /* importando fonte */
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   background: #f6f6f6 0% 0% no-repeat padding-box;
-  font-family: "Figtree", sans-serif;
+  font-family: "Poppins";
   padding: 2rem;
   margin: 0;
+  box-sizing: border-box;
 }
 
 main {
@@ -15,14 +16,15 @@ main {
 
 .card {
   position: relative;
-  background-color: #e30613;
-  color: white;
-  border-radius: 15px;
+  background: #e9032e 0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  color: #ffffff;
   padding: 1.5rem;
-  width: 400px;
+  width: 650px;
   overflow: hidden;
 }
 
+/* 
 .badge {
   position: absolute;
   top: 10px;
@@ -30,13 +32,13 @@ main {
   background-color: #f4b400;
   color: white;
   font-weight: bold;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-}
+} */
 
 .profile {
   display: flex;
@@ -45,8 +47,8 @@ main {
 }
 
 .profile img {
-  width: 60px;
-  height: 60px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 1rem;
@@ -67,33 +69,69 @@ main {
 }
 
 .description p {
-  font-size: 0.95rem;
+  font-size: 18px;
   margin: 0;
+}
+
+.description strong {
+  text-decoration: underline;
 }
 
 .logo {
   position: absolute;
   bottom: 8px;
-  right: 0px;
-  opacity: 0.08;
+  right: -65px;
+  opacity: 0.7;
   z-index: 0;
   pointer-events: none;
-  display: block;
-}
-
-.logo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at bottom left,
-    rgba(0, 0, 0, 0.9),
-    transparent 70%
-  );
 }
 
 .logo img {
-  max-width: 200px; /* ajuste o tamanho conforme o necessário */
+  display: block;
+  max-width: 250px;
   height: auto;
-  filter: brightness(0);
+
+  -webkit-mask-image: radial-gradient(
+    circle at bottom left,
+    transparent 40%,
+    black
+  );
+  mask-image: radial-gradient(circle at bottom left, transparent 30%, black);
+  mask-mode: alpha;
+}
+
+@media (max-width: 680px) {
+  .card {
+    width: 100%;
+    padding: 0.65rem;
+  }
+
+  .profile img {
+    width: 60px;
+    height: 60px;
+    margin-right: 0.5rem;
+  }
+
+  .profile-info h2 {
+    font-size: 16px;
+  }
+
+  .profile-info h1 {
+    font-size: 22px;
+  }
+
+  .description p {
+    font-size: 14px;
+  }
+
+  .logo {
+    bottom: 4px;
+    right: -50px;
+    opacity: 0.15;
+  }
+
+  .logo img {
+    max-width: 220px;
+    mask-image: radial-gradient(circle at bottom left, transparent 10%, black);
+  }
 }
